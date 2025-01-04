@@ -1,27 +1,36 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Karla", sans-serif;
 }
 
 header {
-    height: 30px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: beige;
-    display: flex;
-    align-items: center;
+  height: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: beige;
+  display: flex;
+  align-items: center;
 }
 
 .title {
-    flex-grow: 1;
-    text-align: center;
+  flex-grow: 1;
+  text-align: center;
 }
 
 main {
-    margin-top: 3em;
+  margin-top: 3em;
+}
+
+form,
+form > div {
+    display: grid;
 }

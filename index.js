@@ -1,4 +1,12 @@
 const postsContainer = document.getElementById("post-container");
+const form = document.getElementById("form");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    console.log(formData.get("body"));
+});
 
 fetch("https://jsonplaceholder.typicode.com/posts")
   .then(function (response) {
