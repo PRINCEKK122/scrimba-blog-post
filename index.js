@@ -1,11 +1,34 @@
 const postsContainer = document.getElementById("post-container");
+const postTitle = document.getElementById("title");
+const postBody = document.getElementById("body");
 const form = document.getElementById("form");
 
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const postData = {
+    title: postTitle.value,
+    body: postBody.value,
+  };
 
-    const formData = new FormData(form);
-    console.log(formData.get("body"));
+  const options = {
+    method: "POST",
+    body: JSON.stringify(postData),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  fetch("https://jsonplaceholder.typicode.com/posts", options)
+    .then((res) => res.json())
+    .then((data) => {
+      postsContainer.innerHTML = `
+            <h2>${data.title}</h2>
+            <p>${data.body}</p>
+            ${postsContainer.innerHTML}
+        `;
+    });
+
+  form.reset();
 });
 
 fetch("https://jsonplaceholder.typicode.com/posts")

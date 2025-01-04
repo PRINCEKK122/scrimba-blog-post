@@ -26,11 +26,22 @@ header {
   text-align: center;
 }
 
-main {
-  margin-top: 3em;
-}
-
 form,
 form > div {
-    display: grid;
+  display: grid;
+}
+
+form > div {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 0.625em;
+  font-size: 1.125rem;
+  cursor: pointer;
+}
+
+form {
+  background-color: lightblue;
+  padding: 3.7em 0.625em 0.625em; /* 60px 10px 10px */
 }
